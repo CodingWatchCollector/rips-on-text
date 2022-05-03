@@ -55,7 +55,12 @@ body {
 
 .container > * {
   text-align: center;
-  margin-top: 1rem;
+  margin-block-start: 1rem;
+}
+
+.title > *,
+p > * {
+  margin-block-start: .5rem;
 }
 
 .centered {
@@ -140,13 +145,13 @@ p {
   sometimes this doesn't work well 
   because of visible boundaries 
 */
-.text-tape--horizontal > * 
+.text-tape--horizontal.rotated > * 
 {
   transform: rotate(-3deg);
   z-index: -2;
 }
 
-.text-tape--horizontal > *:nth-of-type(2n) {
+.text-tape--horizontal.rotated > *:nth-of-type(2n) {
   transform: rotate(3deg);
 }
 
@@ -211,11 +216,11 @@ p {
   because of visible boundaries 
   */
 
-.text-tape--vertical > * {
+.text-tape--vertical.rotated > * {
   transform: rotate(-2deg);
   z-index: -2;
 }
 
-.text-tape--vertical > *:nth-child(2n) {
+.text-tape--vertical.rotated > *:nth-child(2n) {
   transform: rotate(2deg);
 }
