@@ -33,8 +33,8 @@ figure {
 
 
 :root {
-  --clr-text: black;
-  --clr--accent: hsl(41.6, 47.2%, 68.8%);
+  --clr--text: black;
+  --clr--accent: hsl(49.3, 98.9%, 64.5%);
   --bg--page: hsl(356.2, 47.7%, 61%);
 }
 
@@ -67,6 +67,11 @@ body {
   text-transform: uppercase;
 }
 
+p {
+  --clr--text: hsl(49.3, 98.9%, 64.5%);
+  --clr--accent: hsl(240, 100%, 3.1%);
+}
+
 .text--vertical {
   text-orientation: upright;
   writing-mode: vertical-lr;
@@ -94,7 +99,7 @@ body {
 */
 
 .text-tape--horizontal {
-  --text-tape--clr: var(--clr-text, white);
+  --text-tape--clr: var(--clr--text, white);
   --text-tape--bg: var(--clr--accent, rebeccapurple);
   --tape-padding: .125em;
   --rip-width: .25em;
@@ -166,7 +171,7 @@ body {
 */
 
 .text-tape--vertical {
-  --text-tape--clr: var(--clr-text, white);
+  --text-tape--clr: var(--clr--text, white);
   --text-tape--bg: var(--clr--accent, rebeccapurple);
   --tape-padding: .125em;
   --rip-height: .5em;
