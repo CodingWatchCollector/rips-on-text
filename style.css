@@ -1,0 +1,216 @@
+/* PRESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline-width: 2px;
+  outline-color: var(--clr-main);
+}
+
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+p,
+figure {
+  margin: 0;
+}
+
+
+:root {
+  --clr-text: black;
+  --clr--accent: hsl(41.6, 47.2%, 68.8%);
+  --bg--page: hsl(356.2, 47.7%, 61%);
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+  Cantarell, Noto Sans, sans-serif;
+  background-color: var(--bg--page);
+  padding-inline: max(2vw, 1rem);
+  margin-inline: auto;
+}
+
+.container + .container {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid rgba( 0 0 0 /.5);
+}
+
+.container > * {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.centered {
+  display: grid;
+  justify-items: center;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.text--vertical {
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+}
+
+
+/* Rips COMPONENTS */
+
+
+/* horizontal rips */
+
+/* to include to HTML:
+<svg width="0" height="0" aria-hidden='true' xmlns="http://www.w3.org/2000/svg">
+      <clipPath id="rip--l" clipPathUnits="objectBoundingBox">
+        <path
+          d="m1,-0.001 l-0.529,0.048 l0.361,0.062 l-0.588,0.138 l0.288,0.078 l-0.159,0.083 l0.592,0.057 l-0.876,0.133 l0.305,0.055 l-0.391,0.14 l0.893,0.039 l-0.485,0.096 l0.592,0.07"
+        ></path>
+      </clipPath>
+      <clipPath id="rip--r" clipPathUnits="objectBoundingBox">
+        <path
+          d="m0.007,0 l0.548,0.071 l-0.433,0.098 l0.878,0.039 c0.003,0,-0.346,0.137,-0.346,0.137 c0,0,0.26,0.054,0.258,0.054 c0.003,0,-0.838,0.134,-0.84,0.134 c0.003,0,0.545,0.061,0.542,0.061 c0.003,0,-0.111,0.085,-0.111,0.085 c0,0,0.269,0.073,0.266,0.073 c0.003,0,-0.577,0.137,-0.58,0.137 c0.003,0,0.251,0.056,0.248,0.056 c0.003,0,-0.438,0.056,-0.437,0.056"
+        ></path>
+      </clipPath>
+    </svg>
+*/
+
+.text-tape--horizontal {
+  --text-tape--clr: var(--clr-text, white);
+  --text-tape--bg: var(--clr--accent, rebeccapurple);
+  --tape-padding: .125em;
+  --rip-width: .25em;
+
+  color: var(--text-tape--clr);
+}
+
+.text-tape--horizontal > * {
+  /* if needed to separate <span> elements:
+  display: inline-block; 
+  add some margin between items */
+  position: relative;
+  padding: var(--tape-padding);
+  background-color: var(--text-tape--bg);
+}
+
+.text-tape--horizontal > *::before,
+.text-tape--horizontal > *::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--rip-width);
+  background-color: var(--text-tape--bg);
+}
+
+.text-tape--horizontal > *::before {
+  right: 100%;
+  clip-path: url(#rip--l);
+}
+
+.text-tape--horizontal > *::after {
+  left: 100%;
+  clip-path: url(#rip--r);
+}
+
+/* rotation if needed.
+  sometimes this doesn't work well 
+  because of visible boundaries 
+*/
+.text-tape--horizontal > * 
+{
+  transform: rotate(-3deg);
+  z-index: -2;
+}
+
+.text-tape--horizontal > *:nth-of-type(2n) {
+  transform: rotate(3deg);
+}
+
+
+
+/* vertical rips */
+/* suitable for vertical text, rips look bad on horizontal lines */
+
+/* to include to HTML:
+<svg width="0" height="0" aria-hidden='true' xmlns="http://www.w3.org/2000/svg">
+      <clipPath id="rip--t" clipPathUnits="objectBoundingBox">
+        <path
+          d="m0,1 l0.073,-0.586 l0.093,0.471 l0.042,-0.885 l0.139,0.382 l0.054,-0.296 l0.132,0.865 l0.061,-0.576 l0.083,0.152 l0.081,-0.29 l0.132,0.593 l0.064,-0.353 l0.046,0.524"
+        ></path>
+      </clipPath>
+      <clipPath id="rip--b" clipPathUnits="objectBoundingBox">
+        <path
+          d="m0.002,-0.003 l0.052,0.45 l0.057,-0.271 l0.133,0.591 l0.081,-0.283 l0.084,0.14 l0.059,-0.571 l0.138,0.866 l0.052,-0.291 l0.138,0.369 l0.042,-0.878 l0.096,0.456 l0.071,-0.575"
+        ></path>
+      </clipPath>
+    </svg>
+*/
+
+.text-tape--vertical {
+  --text-tape--clr: var(--clr-text, white);
+  --text-tape--bg: var(--clr--accent, rebeccapurple);
+  --tape-padding: .125em;
+  --rip-height: .5em;
+
+  color: var(--text-tape--clr);
+}
+
+.text-tape--vertical > * {
+  display: inline-block;
+  position: relative;
+  padding: var(--tape-padding);
+  background-color: var(--text-tape--bg);
+}
+
+.text-tape--vertical > *::before,
+.text-tape--vertical > *::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--rip-height);
+  background-color: var(--text-tape--bg);
+}
+
+.text-tape--vertical > *::before {
+  bottom: 100%;
+  clip-path: url(#rip--t);
+}
+
+.text-tape--vertical > *::after {
+  top: 100%;
+  clip-path: url(#rip--b);
+}
+
+/* rotation if needed 
+  sometimes this doesn't work well 
+  because of visible boundaries 
+  */
+
+.text-tape--vertical > * {
+  transform: rotate(-2deg);
+  z-index: -2;
+}
+
+.text-tape--vertical > *:nth-child(2n) {
+  transform: rotate(2deg);
+}

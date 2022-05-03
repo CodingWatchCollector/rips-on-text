@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>title-band</title>
+  </head>
+  <body>
+    <svg
+      width="0"
+      aria-hidden="true"
+      height="0"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <clipPath id="rip--l" clipPathUnits="objectBoundingBox">
+        <path
+          d="m1,-0.001 l-0.529,0.048 l0.361,0.062 l-0.588,0.138 l0.288,0.078 l-0.159,0.083 l0.592,0.057 l-0.876,0.133 l0.305,0.055 l-0.391,0.14 l0.893,0.039 l-0.485,0.096 l0.592,0.07"
+        ></path>
+      </clipPath>
+      <clipPath id="rip--r" clipPathUnits="objectBoundingBox">
+        <path
+          d="m0.007,0 l0.548,0.071 l-0.433,0.098 l0.878,0.039 c0.003,0,-0.346,0.137,-0.346,0.137 c0,0,0.26,0.054,0.258,0.054 c0.003,0,-0.838,0.134,-0.84,0.134 c0.003,0,0.545,0.061,0.542,0.061 c0.003,0,-0.111,0.085,-0.111,0.085 c0,0,0.269,0.073,0.266,0.073 c0.003,0,-0.577,0.137,-0.58,0.137 c0.003,0,0.251,0.056,0.248,0.056 c0.003,0,-0.438,0.056,-0.437,0.056"
+        ></path>
+      </clipPath>
+      <clipPath id="rip--t" clipPathUnits="objectBoundingBox">
+        <path
+          d="m0,1 l0.073,-0.586 l0.093,0.471 l0.042,-0.885 l0.139,0.382 l0.054,-0.296 l0.132,0.865 l0.061,-0.576 l0.083,0.152 l0.081,-0.29 l0.132,0.593 l0.064,-0.353 l0.046,0.524"
+        ></path>
+      </clipPath>
+      <clipPath id="rip--b" clipPathUnits="objectBoundingBox">
+        <path
+          d="m0.002,-0.003 l0.052,0.45 l0.057,-0.271 l0.133,0.591 l0.081,-0.283 l0.084,0.14 l0.059,-0.571 l0.138,0.866 l0.052,-0.291 l0.138,0.369 l0.042,-0.878 l0.096,0.456 l0.071,-0.575"
+        ></path>
+      </clipPath>
+    </svg>
+
+    <div class="container">
+      DEFAULT
+      <h1 class="text-tape--horizontal title">
+        <span>la grande </span><span>baggare!</span>
+      </h1>
+      <p class="text-tape--horizontal title-description">
+        <span>very long and interesting </span><span>title description</span>
+      </p>
+    </div>
+    <div class="container">
+      CENTERED + ROTATED ({display: grid; justify-items: center;})
+      <h1 class="text-tape--horizontal title centered">
+        <span>la grande </span><span>baggare!</span>
+      </h1>
+      <p class="text-tape--horizontal title-description centered">
+        <span>very long and interesting </span><span>title description</span>
+      </p>
+    </div>
+    <div class="container text--vertical">
+      <div style="writing-mode: horizontal-tb; margin-right: 1rem">
+        VERTICAL TEXT
+      </div>
+      <h1 class="text-tape--vertical title">
+        <span>la grande </span><span>baggare!</span>
+      </h1>
+      <p class="text-tape--vertical title-description">
+        <span>very long and interesting </span><span>title description</span>
+      </p>
+    </div>
+  </body>
+</html>
