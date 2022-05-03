@@ -129,6 +129,7 @@ p {
   bottom: 0;
   width: var(--rip-width);
   background-color: var(--text-tape--bg);
+  margin-inline: -1px; /* to avoid the line between element and its pseudoelements*/
 }
 
 .text-tape--horizontal > *::before {
@@ -199,6 +200,7 @@ p {
   right: 0;
   height: var(--rip-height);
   background-color: var(--text-tape--bg);
+  margin-inline: -1px; /* to avoid the line between element and its pseudoelements*/
 }
 
 .text-tape--vertical > *::before {
